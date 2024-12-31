@@ -7,6 +7,7 @@ interface AppProps {
 }
 interface Users {
   name: {
+    title: string
     first: string;
     last: string;
   }
@@ -14,6 +15,17 @@ interface Users {
   login: {
     uuid: string
   }
+  gender: string;
+  location:{
+     state: string
+     city: string
+
+    }
+    registered: {
+      age: number;
+      date: string
+    }
+   
 }
 
 const App: FC<AppProps> = ({title}) =>{
@@ -36,14 +48,31 @@ const App: FC<AppProps> = ({title}) =>{
           <div>
             <h1>{title}</h1>
              <ul>
-              {users.map(({login,name,email}) => {
+              {users.map(({login,name,email,gender,location,picture,phone, registered}) => {
                 return ( 
-                  <li key={login.uuid}>
-                     <div>
-                      Name: {name.first} {name.last}
-                     </div>
-                     <div>Email: {email}</div>
-                  </li>
+                  <div className="users">
+
+                   <div className='card'>
+
+                     <li key={login.uuid}>
+                      <div>
+                        <img src={picture.large} alt="" />
+                      </div>
+                        <div>
+                         Name:{name.title} {name.first} {name.last}
+                        </div>
+                        <div>Email: {email}</div>
+                        <div> Gender: {gender}</div>
+                        <div> Country: {location.country}</div>
+                        <div> Location: {location.state} {location.city}</div>
+                        <div>Zip Code: {location.postcode}</div>
+                        <div>Phone Number:{phone}</div>
+                        <div> Age: {registered.age}</div>
+                        <div>DOB: {registered.date}</div>
+                     </li> 
+                       <hr />
+                   </div>
+                  </div>
                 )
               })}
             </ul>

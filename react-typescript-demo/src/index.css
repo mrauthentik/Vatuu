@@ -9,6 +9,22 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+*{
+  box-sizing: border-box;
+}
 h1{
   text-align: center;
+}
+.users{
+  display:inline-flex;
+  gap: 10px;
+  justify-content: space-around;
+  flex-direction: column;
+  flex-wrap: wrap;
+  columns: 4;
+  .card{
+    background-color: rgb(232, 229, 229);
+    padding: 1rem;
+    margin: 2rem;
+  }
 }
