@@ -7,14 +7,26 @@ interface AppProps {
 }
 
 const App: FC<AppProps> = ({title}) =>{
-  
-  
-  return (
-     <div>
-       <h1> {title}</h1>
-     </div>
-   )
+ 
+   useEffect( ()=>{
+      const getUsers = async () =>{
+         try {
+           const {data} = await axios.get('https://randomuser.me/api/?results=10')
+           console.log(data)
+         }
+         catch (err){
+          console.log(err)
+         }
+      }
+        getUsers()
 
+        }, [])
+        return (
+          <div>
+            <h1>{title}</h1>
+            <p>{}</p>
+          </div>
+        )
 
 }
 
