@@ -5,14 +5,25 @@ import { useState, FC, useEffect } from 'react';
 interface AppProps {
   title: string;
 }
+interface Users {
+  name: {
+    first: string;
+    last: string;
+  }
+  email: string;
+  login: {
+    uuid: string
+  }
+}
 
 const App: FC<AppProps> = ({title}) =>{
- 
+ const [users, setUsers] = useState<Users[]>([])
    useEffect( ()=>{
       const getUsers = async () =>{
          try {
            const {data} = await axios.get('https://randomuser.me/api/?results=10')
            console.log(data)
+           setUsers(data.results)
          }
          catch (err){
           console.log(err)
@@ -24,7 +35,18 @@ const App: FC<AppProps> = ({title}) =>{
         return (
           <div>
             <h1>{title}</h1>
-            <p>{}</p>
+             <ul>
+              {users.map(({login,name,email}) => {
+                return ( 
+                  <li key={login.uuid}>
+                     <div>
+                      Name: {name.first} {name.last}
+                     </div>
+                     <div>Email: {email}</div>
+                  </li>
+                )
+              })}
+            </ul>
           </div>
         )
 
