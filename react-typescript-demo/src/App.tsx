@@ -5,28 +5,34 @@ import { useState, FC, useEffect } from 'react';
 interface AppProps {
   title: string;
 }
-interface Users {
-  name: {
-    title: string
-    first: string;
-    last: string;
-  }
-  email: string;
-  login: {
-    uuid: string
-  }
-  gender: string;
-  location:{
-     state: string
-     city: string
 
-    }
-    registered: {
-      age: number;
-      date: string
-    }
-   
+export interface Name {
+  first: string;
+  last: string;
+  title: string;
 }
+
+export interface Login {
+  uuid: string;
+ }
+export interface Location {
+  country: string;
+  state: string;
+  city: string;
+  postcode: string;
+}
+export interface Registered {
+  age: number;
+  date: string;
+}
+export interface Users {
+   name: Name;
+   email: string;
+   login: Login;
+   location: Location;
+   registered: Registered;
+   gender: string;
+ }
 
 const App: FC<AppProps> = ({title}) =>{
  const [users, setUsers] = useState<Users[]>([])
