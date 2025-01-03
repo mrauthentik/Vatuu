@@ -3,7 +3,7 @@ import '../index.css'
 
 const Todo: React.FC = () =>{
     return (
-        <div>
+        <div className="todo">
             <span className="heading">Taskon</span>
         </div>
     )
