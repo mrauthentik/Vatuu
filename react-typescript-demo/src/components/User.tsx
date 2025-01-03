@@ -21,6 +21,9 @@ const User: FC<UserProps> = ({login, name,email, registered,location})=>{
         <div>
             Location: {location.city}, {location.state}, {location.country} {location.postcode}
         </div>
+        <div>
+            Registered: {registered.date}
+        </div>
         <hr />
     </li>
    )
