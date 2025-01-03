@@ -1,10 +1,20 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.tsx'
+import Todo from './components/Todo.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App title='TypeScript Demo' />
+    <BrowserRouter>
+     
+     <Routes>
+      <Route path="/user" element={<App  title='TypeScript Demo'/>} />
+      <Route path='/' element={<Todo />}/>
+     </Routes>
+    
+    </BrowserRouter>
+    
   </StrictMode>,
 )
