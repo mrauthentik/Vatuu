@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { Login, Name, Location,Registered} from '../App'
+import { Login, Name, Location, Registered } from '../App';
 
 interface UserProps {
     login: Login;
@@ -9,7 +9,7 @@ interface UserProps {
     registered: Registered;
 }
 
-const User: FC<UserProps> = ({login, name,email})=>{
+const User: FC<UserProps> = ({login, name,email, registered,location})=>{
    return (
     <li key={login, uuid}>
         <div>
@@ -17,6 +17,9 @@ const User: FC<UserProps> = ({login, name,email})=>{
         </div>
         <div>
             Email: {email}
+        </div>
+        <div>
+            Location: {location.city}, {location.state}, {location.country} {location.postcode}
         </div>
         <hr />
     </li>
