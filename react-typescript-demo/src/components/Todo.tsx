@@ -5,6 +5,7 @@ const Todo: React.FC = () =>{
     return (
         <div className="todo">
             <span className="heading">Taskon</span>
+           <InputField />
         </div>
     )
 }
