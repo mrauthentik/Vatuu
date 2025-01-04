@@ -82,6 +82,16 @@ h1{
   transition: 0.2s all;
   box-shadow:  0 0 10px black;
 }
+.btn:hover{
+  background-color: #388ae2;
+  cursor: pointer;
+}
+.todos{
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  flex-wrap: wrap;
+}
 @media (max-width:800px) {
    .heading{
     margin:25px 0 ;
