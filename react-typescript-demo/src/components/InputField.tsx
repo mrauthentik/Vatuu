@@ -33,7 +33,7 @@ const InputField: React.FC <Props> = ({todo, setTodos,handleAdd}) =>{
                     }
                  />
                  <div>
-                     <FullYear style={ {color: "blue", fontSize: '20px'}} />
+                     {/* <FullYear style={ {color: "blue", fontSize: '20px'}} /> */}
                  </div>
             <button className="btn" type="submit" >Create Task</button>
             </form>
