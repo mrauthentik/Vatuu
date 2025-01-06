@@ -23,7 +23,7 @@ const Todo: React.FC = () =>{
     console.log(todos)
    return (
         <div className="todo">
-            <span className="heading">Taskon</span>
+            <span className="heading">Todo List</span>
            <InputField 
              todo= {todo}
              setTodos={setTodo}
