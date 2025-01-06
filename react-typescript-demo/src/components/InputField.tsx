@@ -1,4 +1,5 @@
 import React, { FC, useRef } from "react";
+import { FullYear } from "react-full-year";
 import '../index.css'
 
 interface Props{
@@ -31,6 +32,9 @@ const InputField: React.FC <Props> = ({todo, setTodos,handleAdd}) =>{
                      
                     }
                  />
+                 <div>
+                     <FullYear style={ {color: "blue", fontSize: '20px'}} />
+                 </div>
             <button className="btn" type="submit" >Create Task</button>
             </form>
         </div>
